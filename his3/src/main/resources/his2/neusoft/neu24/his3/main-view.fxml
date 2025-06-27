@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="home_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0"
+      xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="his2.neusoft.neu24.his3.controller.MainViewController">
+    <children>
+        <VBox fx:id="home_left" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../../../images/logo.png" />
+                    </image>
+                </ImageView>
+                <Button mnemonicParsing="false" onAction="#btn_register" prefHeight="100.0" prefWidth="200.0" text="挂号和收费">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/guahao.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#btn_yisheng" prefHeight="100.0" prefWidth="200.0" text="医生">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/yisheng.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button mnemonicParsing="false" onAction="#btn_yaofang" prefHeight="100.0" prefWidth="200.0" text="发药员">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/yaofang.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+        <AnchorPane fx:id="home_right" prefHeight="768.0" prefWidth="1280.0" />
+    </children>
+</HBox>

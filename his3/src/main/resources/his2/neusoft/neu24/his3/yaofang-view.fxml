@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="623.0" prefWidth="938.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="his2.neusoft.neu24.his3.controller.YaofangController">
+    <children>
+        <TableView fx:id="tv_medicines" layoutX="80.0" layoutY="183.0" onKeyReleased="#tv_PatientsKeyRealeased" onMousePressed="#tv_MousePressed" prefHeight="357.0" prefWidth="810.0">
+            <columns>
+            <TableColumn fx:id="id" prefWidth="59.333343505859375" text="药品id" />
+                <TableColumn fx:id="mnemonic_code" prefWidth="166.0" text="药品助记码" />
+                <TableColumn fx:id="name" prefWidth="183.99998474121094" text="药品名称" />
+                <TableColumn fx:id="price" minWidth="2.0" prefWidth="103.33334350585938" text="药品单价" />
+                <TableColumn fx:id="producer" minWidth="0.0" prefWidth="198.66668701171875" text="生产厂家" />
+            <TableColumn fx:id="type" minWidth="0.0" prefWidth="95.33331298828125" text="药品类型" />
+            </columns>
+        </TableView>
+        <Label layoutX="80.0" layoutY="55.0" prefHeight="41.0" prefWidth="96.0" text="药品名称">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="112.0" prefHeight="41.0" prefWidth="96.0" text="拼音助记码">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="tf_name" layoutX="221.0" layoutY="56.0" prefHeight="41.0" prefWidth="517.0" />
+        <TextField fx:id="tf_zhujima" layoutX="221.0" layoutY="112.0" prefHeight="41.0" prefWidth="517.0" />
+        <Button layoutX="767.0" layoutY="112.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="58.0" text="搜索">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+    </children>
+
+</AnchorPane>

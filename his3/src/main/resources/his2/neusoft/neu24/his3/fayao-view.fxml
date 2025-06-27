@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="fayao_AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="his2.neusoft.neu24.his3.controller.FayaoController">
+    <children>
+        <VBox fx:id="fayao_VBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0">
+            <children>
+                <AnchorPane prefHeight="135.0" prefWidth="1080.0">
+                    <children>
+                        <Label layoutX="58.0" layoutY="45.0" prefHeight="79.0" prefWidth="119.0" text="发药">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="54.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../images/fayao_label.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Label>
+                        <Separator layoutY="107.0" prefHeight="33.0" prefWidth="1080.0" />
+                  <Button layoutX="985.0" layoutY="73.0" mnemonicParsing="false" onAction="#bt_refrash" prefHeight="33.0" prefWidth="68.0" text="刷新">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="628.0" prefWidth="1080.0">
+                    <children>
+                        <TableView fx:id="fayao_TableView1" layoutX="25.0" layoutY="59.0" prefHeight="200.0" prefWidth="1030.0">
+                            <columns>
+                                <TableColumn fx:id="num" prefWidth="77.99999809265137" text="编号" />
+                                <TableColumn fx:id="case_num" minWidth="4.666717529296875" prefWidth="93.33331298828125" text="患者病历号" />
+                                <TableColumn fx:id="real_name" minWidth="4.666717529296875" prefWidth="142.6667251586914" text="患者姓名" />
+                                <TableColumn fx:id="age" minWidth="4.666717529296875" prefWidth="68.66668701171875" text="患者年龄" />
+                                <TableColumn fx:id="gender" minWidth="4.666717529296875" prefWidth="83.33331298828125" text="患者性别" />
+                                <TableColumn fx:id="card_num" minWidth="0.0" prefWidth="252.00006103515625" text="身份证号" />
+                                <TableColumn fx:id="address" maxWidth="311.9998779296875" minWidth="4.666717529296875" prefWidth="152.0" text="患者地址" />
+                        <TableColumn fx:id="re_control" maxWidth="311.9998779296875" minWidth="4.666717529296875" prefWidth="152.0" text="操作" />
+                            </columns>
+                        </TableView>
+                        <TableView fx:id="fayao_TableView2" layoutX="25.0" layoutY="335.0" prefHeight="200.0" prefWidth="1030.0">
+                            <columns>
+                                <TableColumn fx:id="fayao_TableView_Mnum" prefWidth="50.000001311302185" text="编号" />
+                                <TableColumn fx:id="fayao_TableView_Mid" minWidth="4.666717529296875" prefWidth="145.9999771118164" text="药品编码" />
+                                <TableColumn fx:id="fayao_TableView_Mname" minWidth="4.666717529296875" prefWidth="232.6666717529297" text="药品名称" />
+                                <TableColumn fx:id="fayao_TableView_Mtype" minWidth="4.666717529296875" prefWidth="92.66671752929688" text="药品规格" />
+                                <TableColumn fx:id="fayao_TableView_Mproducer" minWidth="4.666717529296875" prefWidth="270.66668701171875" text="生产厂家" />
+                                <TableColumn fx:id="fayao_TableView_Mprice" minWidth="4.666717529296875" prefWidth="88.00006103515625" text="单价" />
+                                <TableColumn fx:id="fayao_TableView_Mcondition" maxWidth="265.3333740234375" minWidth="4.666717529296875" prefWidth="71.333251953125" text="状态" />
+                                <TableColumn fx:id="fayao_TableView_Mbt" maxWidth="261.33331298828125" minWidth="4.666717529296875" prefWidth="79.99993896484375" text="操作" />
+                            </columns>
+                        </TableView>
+                        <TextField fx:id="search_blh" layoutX="25.0" layoutY="26.0" prefHeight="23.0" prefWidth="415.0" promptText="请输入患者病历号" />
+                        <TextField fx:id="search_name" layoutX="470.0" layoutY="26.0" prefHeight="23.0" prefWidth="415.0" promptText="请输入患者姓名" />
+                        <Separator layoutY="297.0" prefHeight="33.0" prefWidth="1080.0" />
+                        <Pagination layoutX="866.0" layoutY="259.0" prefHeight="42.0" prefWidth="200.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
+
+</AnchorPane>
