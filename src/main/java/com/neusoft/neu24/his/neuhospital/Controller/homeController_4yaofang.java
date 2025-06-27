@@ -19,7 +19,7 @@ public class homeController_4yaofang {
     @FXML
     public void fayao_return() throws IOException
     {
-        GlobalData.switchScene1("main-home-view.fxml", 1280, 768, "登录");
+        GlobalData.switchScene1("home-view.fxml", 1280, 768, "登录");
     }
     @FXML
     public void initialize()

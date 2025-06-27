@@ -15,6 +15,4 @@ public class Project {
     private String price;
     private String sort;
     private String dept;
-
-
 }

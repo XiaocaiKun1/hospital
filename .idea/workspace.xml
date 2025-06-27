@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9678d74-05be-4677-af99-22bf5e05126f" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/neusoft/neu24/his/neuhospital/imgs/bdaf464c2847abc3b19f0364e507dfe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/neusoft/neu24/his/neuhospital/imgs/jiaohao.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/neusoft/neu24/his/neuhospital/imgs/guahao.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/neusoft/neu24/his/neuhospital/imgs/guahao.png" afterDir="false" />
+    <list default="true" id="f9678d74-05be-4677-af99-22bf5e05126f" name="变更" comment="修改readme">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/HomeController1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/HomeController1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/InitialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/InitialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/homeController_4yaofang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/Controller/homeController_4yaofang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/util/GlobalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/neu24/his/neuhospital/util/GlobalData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/neusoft/neu24/his/neuhospital/main-home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/neusoft/neu24/his/neuhospital/home-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/Controller/InitialController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/Controller/InitialController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/Controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/Controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/Controller/homeController_4yaofang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/Controller/homeController_4yaofang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/imgs/guahao.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/imgs/guahao.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/main-home-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/util/GlobalData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/neu24/his/neuhospital/util/GlobalData.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +68,8 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Mybranch",
-    "last_opened_file_path": "D:/tool/git/gitcode/hospital/src/main/resources/com/neusoft/neu24/his/neuhospital/imgs",
+    "git-widget-placeholder": "lgz",
+    "last_opened_file_path": "D:/tool/git/gitcode/hospital/src/main/java/com/neusoft/neu24/his/neuhospital/Controller",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,18 +79,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\tool\git\gitcode\hospital\src\main\java\com\neusoft\neu24\his\neuhospital\Controller" />
       <recent name="D:\tool\git\gitcode\hospital\src\main\resources\com\neusoft\neu24\his\neuhospital\imgs" />
       <recent name="D:\tool\git\gitcode\hospital\src\main\resources\com\neusoft\neu24\his\neuhospital" />
       <recent name="D:\tool\git\gitcode\hospital\src\main\java\com\neusoft\neu24\his\neuhospital\dao" />
       <recent name="D:\tool\git\gitcode\hospital\src\main\java\com\neusoft\neu24\his\neuhospital\service" />
-      <recent name="D:\tool\git\gitcode\hospital\src\main\java\com\neusoft\neu24\his\neuhospital\service\impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.neusoft.neu24.his.neuhospital.entity" />
       <recent name="com.neusoft.neu24.his.neuhospital.dao.Impl" />
       <recent name="com.neusoft.neu24.his.neuhospital" />
       <recent name="com.neusoft.neu24.his.neuhospital.service.impl" />
       <recent name="com.neusoft.neu24.his.neuhospital.service" />
-      <recent name="com.neusoft.neu24.his.neuhospital.dao" />
     </key>
   </component>
   <component name="RunManager">
@@ -131,7 +138,7 @@
       <workItem from="1750838692160" duration="97000" />
       <workItem from="1750984823267" duration="1665000" />
       <workItem from="1750988790342" duration="14000" />
-      <workItem from="1750988822751" duration="341000" />
+      <workItem from="1750988822751" duration="2621000" />
     </task>
     <task id="LOCAL-00001" summary="变更">
       <option name="closed" value="true" />
@@ -141,14 +148,50 @@
       <option name="project" value="LOCAL" />
       <updated>1750988889824</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="变更">
+      <option name="closed" value="true" />
+      <created>1750989197519</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750989197519</updated>
+    </task>
+    <task id="LOCAL-00003" summary="变更">
+      <option name="closed" value="true" />
+      <created>1750989334625</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750989334625</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改readme">
+      <option name="closed" value="true" />
+      <created>1750989780021</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1750989780021</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="变更" />
-    <option name="LAST_COMMIT_MESSAGE" value="变更" />
+    <MESSAGE value="修改readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改readme" />
   </component>
 </project>

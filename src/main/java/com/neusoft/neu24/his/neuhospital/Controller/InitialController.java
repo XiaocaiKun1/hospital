@@ -17,7 +17,7 @@ public class InitialController {
     @FXML
     public void btn_return() throws Exception
     {
-        GlobalData.switchScene1("main-home-view.fxml", 1280, 768, "登录");
+        GlobalData.switchScene1("home-view.fxml", 1280, 768, "登录");
     }
 
     @FXML

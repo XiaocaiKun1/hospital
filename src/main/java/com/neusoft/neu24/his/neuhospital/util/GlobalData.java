@@ -22,11 +22,11 @@ public class GlobalData {
     public static void setStage(Stage stage){
         GlobalData.stage=stage;
     }
-    public Stage getStage(){
+    public static Stage getStage(){
         return stage;
     }
     public static void switchScene1(String sceneName,int width,int height, String title)throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication_login.class.getResource("main-home-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication_login.class.getResource("home-view.fxml"));
         Scene scene=new Scene(fxmlLoader.load(),width,height);
         GlobalData.stage.setScene(scene);
         stage.setX(100);

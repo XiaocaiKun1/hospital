@@ -45,7 +45,7 @@ public class RegisterController {
 
     @FXML
     void btn_exit() throws IOException {
-        GlobalData.switchScene1("main-home-view.fxml",1280,768,"东软云医院");
+        GlobalData.switchScene1("home-view.fxml",1280,768,"东软云医院");
     }
 
 }
