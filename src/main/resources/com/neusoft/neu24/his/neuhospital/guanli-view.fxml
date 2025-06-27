@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neusoft.neu24.his.neuhospital.Controller.guanliController">
+   <children>
+      <VBox layoutY="-7.0" prefHeight="776.0" prefWidth="1080.0">
+         <children>
+            <AnchorPane prefHeight="267.0" prefWidth="1080.0">
+               <children>
+                  <Label layoutX="68.0" layoutY="27.0" prefHeight="74.0" prefWidth="194.0" text="药库管理">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="3.0" layoutY="101.0" prefHeight="5.0" prefWidth="1080.0" />
+                  <TextField fx:id="guanli_search1" layoutX="63.0" layoutY="124.0" prefHeight="23.0" prefWidth="251.0" promptText="请输入药品编号" />
+                  <TextField fx:id="guanli_search2" layoutX="352.0" layoutY="124.0" prefHeight="23.0" prefWidth="251.0" promptText="请输入拼音助记码" />
+                  <TextField fx:id="guanli_search3" layoutX="653.0" layoutY="124.0" prefHeight="23.0" prefWidth="251.0" promptText="请输入药品名称" />
+                  <Button layoutX="959.0" layoutY="124.0" mnemonicParsing="false" text="搜索" />
+                  <Separator layoutX="3.0" layoutY="167.0" prefHeight="5.0" prefWidth="1080.0" />
+                  <Button layoutX="68.0" layoutY="192.0" mnemonicParsing="false" onAction="#btn_add" text="增加药品">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../imgs/guanli_label.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Separator layoutX="7.0" layoutY="250.0" prefHeight="5.0" prefWidth="1080.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="509.0" prefWidth="1080.0">
+               <children>
+                  <TableView fx:id="guanli_TableView" layoutX="24.0" layoutY="7.0" prefHeight="444.0" prefWidth="1041.0">
+                    <columns>
+                      <TableColumn fx:id="guanli_TableView_num" prefWidth="41.99999809265137" text="序号" />
+                      <TableColumn fx:id="guanli_TableView_Mid" prefWidth="181.33341217041016" text="药品编码" />
+                        <TableColumn fx:id="guanli_TableView_Mname" prefWidth="248.66661071777344" text="药品名称" />
+                        <TableColumn fx:id="guanli_TableView_Mtype" prefWidth="130.00003051757812" text="药品规格" />
+                        <TableColumn fx:id="guanli_TableView_Mproducer" prefWidth="255.99993896484375" text="生产厂家" />
+                        <TableColumn fx:id="guanli_TableView_Mprice" prefWidth="90.666748046875" text="单价" />
+                        <TableColumn fx:id="guanli_TableView_Mbt1" maxWidth="190.6666463216145" prefWidth="91.33331298828125" text="操作" />
+                    </columns>
+                  </TableView>
+                  <Pagination layoutX="865.0" layoutY="451.0" prefHeight="47.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
