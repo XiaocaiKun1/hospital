@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Ap_6" prefHeight="727.0" prefWidth="1034.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neusoft.neu24.his.demo.controller.ChufangViewController">
+   <children>
+      <Label layoutX="65.0" layoutY="61.0" prefHeight="57.0" prefWidth="159.0" text="开设处方">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/jiaohao.jpeg" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tv_medicines" layoutX="65.0" layoutY="149.0" prefHeight="353.0" prefWidth="843.0">
+        <columns>
+            <TableColumn fx:id="idCloumn" minWidth="0.0" prefWidth="141.33335876464844" text="药品编码" />
+          <TableColumn fx:id="nameCloumn" prefWidth="99.3333740234375" text="药品名称" />
+          <TableColumn fx:id="typeCloumn" minWidth="0.0" prefWidth="230.0" text="药品规格" />
+            <TableColumn fx:id="priceCloumn" minWidth="0.0" prefWidth="56.6666259765625" text="单价" />
+            <TableColumn fx:id="processorCloumn" minWidth="0.0" prefWidth="217.33331298828125" text="生产厂家" />
+            <TableColumn fx:id="chufang_TableView_Mbt1" minWidth="0.0" prefWidth="97.3333740234375" text="操作" />
+        </columns>
+      </TableView>
+      <Button layoutX="65.0" layoutY="588.0" mnemonicParsing="false" onAction="#bt_kaili" prefHeight="40.0" prefWidth="98.0" text="开立处方" />
+      <Button layoutX="218.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#bt_p" prefHeight="40.0" prefWidth="98.0" text="重置处方" />
+      <Button layoutX="935.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#tvMouseClicked" prefHeight="40.0" prefWidth="76.0" text="添加" />
+   </children>
+</AnchorPane>
