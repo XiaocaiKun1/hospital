@@ -3,11 +3,11 @@ package his2.neusoft.neu24.his3.entity;
 import java.math.BigDecimal;
 
 public class Project {
-    private int id;
+    private String id;
     private String name;
     private BigDecimal fee;
 
-    public Project(int id, String name, BigDecimal fee) {
+    public Project(String id, String name, BigDecimal fee) {
         this.id = id;
         this.name = name;
         this.fee = fee;
@@ -16,11 +16,10 @@ public class Project {
     public Project() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

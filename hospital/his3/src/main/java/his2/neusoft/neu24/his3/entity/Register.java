@@ -64,6 +64,14 @@ public class Register {
     public Register() {
     }
 
+    public Register(String caseNumber, String name, String sex, String cardNumber, Long age) {
+        this.case_number = caseNumber;
+        this.name = name;
+        this.sex = sex;
+        this.card_number = cardNumber;
+        this.age = age;
+    }
+
     public String getCase_number() {
         return case_number;
     }

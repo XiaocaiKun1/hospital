@@ -84,7 +84,7 @@ public class BingkuController {
         String sql = "select * from project";
         ResultSet res = st.executeQuery(sql);
         while (res.next()) {
-            int id = res.getInt("id");
+            String id = res.getString("id");
             String name = res.getString("name");
             BigDecimal fee = res.getBigDecimal("fee");
             Project project = new Project(id, name, fee);
@@ -107,7 +107,7 @@ public class BingkuController {
 
                 ResultSet res1 = st1.executeQuery(sql1);
                 while (res1.next()) {
-                    int id = res1.getInt("id");
+                    String id = res1.getString("id");
                     String name = res1.getString("name");
                     BigDecimal fee = res1.getBigDecimal("fee");
                     Project project = new Project(id, name, fee);
@@ -138,7 +138,7 @@ public class BingkuController {
 
                 ResultSet res1 = st1.executeQuery(sql1);
                 while (res1.next()) {
-                    int id = res1.getInt("id");
+                    String id = res1.getString("id");
                     String name = res1.getString("name");
                     BigDecimal fee = res1.getBigDecimal("fee");
                     Project project = new Project(id, name, fee);
@@ -167,7 +167,7 @@ public class BingkuController {
 
         List<Project> list = new ArrayList<>();
         while (res.next()) {
-            int id = res.getInt("id");
+            String id = res.getString("id");
             String name = res.getString("name");
             BigDecimal fee = res.getBigDecimal("fee");
             Project project = new Project(id, name, fee);

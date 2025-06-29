@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Ap_2" prefHeight="674.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="his2.neusoft.neu24.his3.controller.Enter1Controller">
+<AnchorPane fx:id="Ap_2" prefHeight="674.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="his2.neusoft.neu24.his3.controller.Enter1Controller">
    <children>
       <Label layoutX="23.0" layoutY="26.0" prefHeight="34.0" prefWidth="89.0" text="患者信息">
          <font>
@@ -53,11 +53,12 @@
       <Separator layoutX="5.0" layoutY="181.0" prefHeight="1.0" prefWidth="787.0" />
       <TableView fx:id="tv_patients" layoutY="197.0" onKeyReleased="#tv_PatientsKeyRealeased" prefHeight="200.0" prefWidth="775.0">
         <columns>
-          <TableColumn fx:id="codeColumn" prefWidth="75.0" text="编号" />
-          <TableColumn fx:id="numberColumn" prefWidth="154.66669464111328" text="检查编码" />
-            <TableColumn fx:id="nameColumn" minWidth="0.66668701171875" prefWidth="205.3332977294922" text="检查名称" />
-            <TableColumn fx:id="priceColumn" prefWidth="112.0" text="单价" />
-            <TableColumn fx:id="sortColumn" minWidth="7.3333740234375" prefWidth="105.3333740234375" text="费用分类" />
+          <TableColumn fx:id="codeColumn" prefWidth="128.00003051757812" text="编号" />
+            <TableColumn fx:id="nameColumn" minWidth="0.66668701171875" prefWidth="192.66668701171875" text="检查名称" />
+            <TableColumn fx:id="scaleColumn" prefWidth="140.6666259765625" text="检查规格" />
+            <TableColumn fx:id="priceColumn" prefWidth="114.66668701171875" text="单价" />
+            <TableColumn fx:id="sortColumn" minWidth="7.3333740234375" prefWidth="102.6666259765625" text="费用分类" />
+            <TableColumn fx:id="btColumn" minWidth="7.3333740234375" prefWidth="102.6666259765625" text="操作" />
         </columns>
       </TableView>
       <Label fx:id="Label5" layoutX="14.0" layoutY="405.0" prefHeight="34.0" prefWidth="243.0" text="Label" />
@@ -80,7 +81,7 @@
          </font>
       </Label>
       <ComboBox fx:id="cb_2" layoutX="397.0" layoutY="530.0" prefHeight="34.0" prefWidth="198.0" />
-      <Button layoutX="19.0" layoutY="606.0" mnemonicParsing="false" onMouseClicked="#bt_w" prefHeight="46.0" prefWidth="115.0" text="开始检查" />
-      <Button layoutX="157.0" layoutY="606.0" mnemonicParsing="false" onMouseClicked="#bt_e" prefHeight="46.0" prefWidth="115.0" text="重置医生" />
+      <Button layoutX="19.0" layoutY="606.0" mnemonicParsing="false" onMouseClicked="#bt_start" prefHeight="46.0" prefWidth="115.0" text="开始检查" />
+      <Button layoutX="157.0" layoutY="606.0" mnemonicParsing="false" onMouseClicked="#bt_reset" prefHeight="46.0" prefWidth="115.0" text="重置医生" />
    </children>
 </AnchorPane>

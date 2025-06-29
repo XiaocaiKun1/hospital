@@ -23,7 +23,6 @@ public class LoginController {
         {
             GlobalData.switchScene("main-view.fxml", 1280, 768, "医院系统");
             GlobalData.initRegisterList();
-            GlobalData.initProjectsList();
         }
 
         else {

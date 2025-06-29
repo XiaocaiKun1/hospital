@@ -21,6 +21,8 @@ import java.net.URL;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
+        GlobalData.initRegisterProjectsList();
+        System.out.println(GlobalData.register_projects_List);
         GlobalData.setStage(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 722.0, 403.0);

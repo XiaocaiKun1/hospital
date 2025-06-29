@@ -1,6 +1,7 @@
 package his2.neusoft.neu24.his3.util;
 
 import his2.neusoft.neu24.his3.HelloApplication;
+import his2.neusoft.neu24.his3.entity.Project;
 import his2.neusoft.neu24.his3.entity.Register;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,13 +24,12 @@ public class GlobalData {
     private static String user = "root";
     private static String password = "123456";
     public static String register_id_Selected;
-
     public static String register_id_for_drug;
 
     public static List<Register> registerList = new ArrayList<>();
-    public static List<projects> projectList = new ArrayList<>();
-    public static List<projects> projectList_selected = new ArrayList<>();
-
+    public static List<Project> projectList = new ArrayList<>();
+    public static List<Register> register_projects_List = new ArrayList<>();
+    public static Register register_SelectedOnProject;
 
     public static void switchScene(String sceneName, float width, float height, String title)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(sceneName));
@@ -74,24 +74,43 @@ public class GlobalData {
         con.close();
     }
 
-    public static void initProjectsList() throws Exception {
-        projectList.clear();
-        String sql1 = "select * from projects_re";
+    public static void initRegisterProjectsList() throws Exception {
+        register_projects_List.clear();
+        String sql1 = "select * from register where id in (select distinct reg_id from projects where jiancha_state = '未检查')";
         Class.forName(GlobalData.getClassName());
         Connection con = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
         Statement st = con.createStatement();
 
         ResultSet res = st.executeQuery(sql1);
         while (res.next()) {
-            String name = res.getString("name");
+            //获取未处理的挂号表
+            String case_number = res.getString("id");
+            String name = res.getString("real_name");
+            String sex = res.getString("gender");
+            String card_number = res.getString("card_number");
+            Long age = res.getLong("age");
+            Register register = new Register(case_number, name, sex, card_number, age);
+            GlobalData.register_projects_List.add(register);
+        }
+
+        st.close();
+        con.close();
+    }
+
+    public static void initProjectsList() throws Exception {
+        projectList.clear();
+        String sql1 = "select project.id, project.name, project.fee  from projects, project where pro_id=project.id and projects.reg_id =" + register_SelectedOnProject.getCase_number();
+        Class.forName(GlobalData.getClassName());
+        Connection con = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
+        Statement st = con.createStatement();
+        ResultSet res = st.executeQuery(sql1);
+
+        while (res.next()) {
+            //获取对应的检查项目
             String id = res.getString("id");
-            int age = res.getInt("age");
-            String sex = res.getString("sex");
-            String result = res.getString("result");
-            String project_name = res.getString("project_name");
+            String name = res.getString("name");
             BigDecimal fee = res.getBigDecimal("fee");
-            String project_id = res.getString("project_id");
-            projects project = new projects(name, id, age, sex, result, project_name, fee, project_id);
+            Project project = new Project(id, name, fee);
             projectList.add(project);
         }
 
@@ -99,30 +118,6 @@ public class GlobalData {
         con.close();
     }
 
-    public static void initProjectsList_selected(String project_id1, String id1) throws Exception {
-        projectList_selected.clear();
-        String sql1 = "select * from projects_re where id=" + project_id1 + "and project_id=" + id1;
-        Class.forName(GlobalData.getClassName());
-        Connection con = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
-        Statement st = con.createStatement();
-
-        ResultSet res = st.executeQuery(sql1);
-        while (res.next()) {
-            String name = res.getString("name");
-            String id = res.getString("id");
-            int age = res.getInt("age");
-            String sex = res.getString("sex");
-            String result = res.getString("result");
-            String project_name = res.getString("project_name");
-            BigDecimal fee = res.getBigDecimal("fee");
-            String project_id = res.getString("project_id");
-            projects project = new projects(name, id, age, sex, result, project_name, fee, project_id);
-            projectList_selected.add(project);
-        }
-
-        st.close();
-        con.close();
-    }
     public static void setStage(Stage stage) {
         GlobalData.stage = stage;
     }

@@ -17,7 +17,7 @@ public class JianchaController {
     @FXML
     public void btn_return() throws Exception
     {
-        GlobalData.switchScene("main-home-view.fxml", 1280, 768, "登录");
+        GlobalData.switchScene("main-view.fxml", 1280, 768, "登录");
     }
 
     @FXML
