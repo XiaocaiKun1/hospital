@@ -15,7 +15,10 @@ public class MainViewController {
     public void btn_yisheng()throws Exception{
         GlobalData.switchScene("doctor-view.fxml",1280,768,"东软云医院");
     }
-
+    @FXML
+    public void btn_jiancha()throws Exception{
+        GlobalData.switchScene("jiancha-view.fxml",1280,768,"东软云医院");
+    }
 
     @FXML
     public void btn_yaofang() throws Exception {

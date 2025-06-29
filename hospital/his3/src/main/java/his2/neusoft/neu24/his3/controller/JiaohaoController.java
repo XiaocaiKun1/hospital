@@ -287,7 +287,7 @@ public class JiaohaoController {
             }
 
 
-            if (list != null) {
+            if (list1 != null) {
                 tv_patients.getItems().clear();
                 tv_patients.getItems().addAll(list1);
             }
