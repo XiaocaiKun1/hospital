@@ -72,6 +72,7 @@ public class JiaohaoController {
         }
         st.close();
         con.close();
+        tv_patients.getItems().clear();
         tv_patients.getItems().addAll(list);
 
 
@@ -336,5 +337,10 @@ public class JiaohaoController {
             tv_patients.getItems().clear();
             tv_patients.getItems().addAll(list);
         }
+    }
+
+    @FXML
+    public void bt_refresh() throws Exception {
+        this.initialize();
     }
 }

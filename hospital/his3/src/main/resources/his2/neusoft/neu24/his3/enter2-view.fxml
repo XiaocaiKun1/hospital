@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -12,10 +11,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Ap_1" prefHeight="1004.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="his2.neusoft.neu24.his3.controller.Enter2Controller">
+<AnchorPane fx:id="Ap_1" prefHeight="660.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="his2.neusoft.neu24.his3.controller.Enter2Controller">
    <children>
-      <TextField fx:id="tf111" layoutX="14.0" layoutY="109.0" prefHeight="34.0" prefWidth="252.0" promptText="请输入患者病历号" />
-      <TextField fx:id="tf222" layoutX="299.0" layoutY="109.0" prefHeight="34.0" prefWidth="252.0" promptText="请输入患者姓名" />
+      <TextField fx:id="search_id" layoutX="14.0" layoutY="109.0" prefHeight="34.0" prefWidth="252.0" promptText="请输入患者病历号" />
+      <TextField fx:id="search_name" layoutX="299.0" layoutY="109.0" prefHeight="34.0" prefWidth="252.0" promptText="请输入患者姓名" />
       <Label contentDisplay="CENTER" layoutX="74.0" layoutY="7.0" prefHeight="77.0" prefWidth="276.0" text="检查结果录入">
          <font>
             <Font size="21.0" />
@@ -30,7 +29,7 @@
          </image>
       </ImageView>
       <Separator layoutY="414.0" prefHeight="3.0" prefWidth="912.0" />
-      <TableView fx:id="tv_1" layoutY="166.0" prefHeight="229.0" prefWidth="912.0">
+      <TableView fx:id="tv_1" layoutY="166.0" prefHeight="151.0" prefWidth="912.0">
          <columns>
             <TableColumn fx:id="IDCloumn" prefWidth="73.33331680297852" text="编号" />
             <TableColumn fx:id="nameCloumn" prefWidth="95.99999237060547" text="患者姓名" />
@@ -41,7 +40,7 @@
          </columns>
       </TableView>
       <Button layoutX="747.0" layoutY="109.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" text="进行检查" />
-      <TableView fx:id="tv_2" layoutX="1.0" layoutY="395.0" onKeyReleased="#tv_PatientsKeyRealeased" prefHeight="200.0" prefWidth="912.0">
+      <TableView fx:id="tv_2" layoutX="1.0" layoutY="317.0" onKeyReleased="#tv_PatientsKeyRealeased" prefHeight="151.0" prefWidth="912.0">
          <columns>
             <TableColumn fx:id="codeColumn" prefWidth="154.66669464111328" text="检查编码" />
             <TableColumn fx:id="name1Column" minWidth="0.66668701171875" prefWidth="258.66664123535156" text="检查名称" />
@@ -50,42 +49,24 @@
             <TableColumn fx:id="btnColumn" minWidth="7.3333740234375" prefWidth="223.33331298828125" text="操作" />
          </columns>
       </TableView>
-      <Label fx:id="label" layoutX="7.0" layoutY="627.0" prefHeight="34.0" prefWidth="243.0" text="Label" />
+      <Label fx:id="label" layoutX="7.0" layoutY="468.0" prefHeight="34.0" prefWidth="243.0" text="Label" />
       <Separator layoutX="5.0" layoutY="679.0" prefHeight="3.0" prefWidth="904.0" />
-      <Label layoutX="7.0" layoutY="695.0" prefHeight="34.0" prefWidth="243.0" text="选择输入检查结果的医生">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField layoutX="-5.0" layoutY="742.0" prefHeight="71.0" prefWidth="912.0" />
-      <Label layoutX="4.0" layoutY="760.0" prefHeight="34.0" prefWidth="101.0" text="科室选择：">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="cb_1" layoutX="90.0" layoutY="760.0" prefHeight="34.0" prefWidth="182.0" />
-      <Label layoutX="310.0" layoutY="760.0" prefHeight="34.0" prefWidth="101.0" text="医生选择：">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="cb_2" layoutX="411.0" layoutY="761.0" prefHeight="34.0" prefWidth="198.0" />
-      <Label layoutX="7.0" layoutY="822.0" prefHeight="34.0" prefWidth="243.0" text="输入检查结果">
+      <Label layoutX="7.0" layoutY="493.0" prefHeight="34.0" prefWidth="243.0" text="输入检查结果">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label layoutX="7.0" layoutY="856.0" prefHeight="71.0" prefWidth="922.0" text="检查结果">
+      <Label layoutX="5.0" layoutY="553.0" prefHeight="71.0" prefWidth="922.0" text="检查结果">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_search" layoutX="133.0" layoutY="865.0" prefHeight="53.0" prefWidth="669.0" promptText="请输入检查结果">
+      <TextField fx:id="jiancha_result" layoutX="121.0" layoutY="562.0" prefHeight="53.0" prefWidth="669.0" promptText="请输入检查结果">
          <font>
             <Font size="19.0" />
          </font>
       </TextField>
-      <Button fx:id="bt_1" layoutX="30.0" layoutY="937.0" mnemonicParsing="false" onMouseClicked="#bt_1Clicked" prefHeight="42.0" prefWidth="81.0" text="结果提交" />
-      <Button fx:id="bt_2" layoutX="148.0" layoutY="937.0" mnemonicParsing="false" onMouseClicked="#bt_2Clicked" prefHeight="42.0" prefWidth="101.0" text="重置输入" />
+      <Button fx:id="bt_1" layoutX="33.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#bt_1Clicked" prefHeight="42.0" prefWidth="81.0" text="结果提交" />
+      <Button fx:id="bt_2" layoutX="148.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#bt_2Clicked" prefHeight="42.0" prefWidth="101.0" text="重置输入" />
    </children>
 </AnchorPane>

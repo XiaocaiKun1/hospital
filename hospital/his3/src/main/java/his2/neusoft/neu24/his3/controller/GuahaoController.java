@@ -323,8 +323,6 @@ public class GuahaoController {
 
         btn_clear();
 
-
-
     }
 
 }

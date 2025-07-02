@@ -89,71 +89,23 @@ public class ApplyController {
         //实现搜索功能
         tf_search1.textProperty().bindBidirectional(tf_searchProperty1);
         tf_searchProperty1.addListener((observable, oldValue, newValue) -> {
-            System.out.println(newValue);
-            List<Register> list1 = new ArrayList<>();
             try {
-                Class.forName(GlobalData.getClassName());
-                Connection con1 = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
-                Statement st1 = con1.createStatement();
-
-                System.out.println(newValue);
                 tf_searchProperty1.set(newValue);
-                String sql1 = "select * from register where  id in in (select distinct reg_id from projects) and id like '%" + tf_searchProperty1.get() + "%' and real_name like '%" + tf_searchProperty2.get() + "%'";
-
-                ResultSet res1 = st1.executeQuery(sql1);
-                while (res1.next()) {
-                    String name = res1.getString("real_name");
-                    String age = res1.getString("age");
-                    String sex = res1.getString("gender");
-                    String id = res1.getString("id");
-                    Register p = new Register(id, name, age, sex);
-                    list1.add(p);
-                }
-                st1.close();
-                con1.close();
+                //查询对应的病历单
+                this.search();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
-
-            if (list1 != null) {
-                tv_patients.getItems().clear();
-                tv_patients.getItems().addAll(list1);
-            }
-
         });
+
+        //实现搜索功能
         tf_search2.textProperty().bindBidirectional(tf_searchProperty2);
         tf_searchProperty2.addListener((observable, oldValue, newValue) -> {
-            System.out.println(newValue);
-            List<Register> list1 = new ArrayList<>();
             try {
-                Class.forName(GlobalData.getClassName());
-                Connection con1 = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
-                Statement st1 = con1.createStatement();
-
-                System.out.println(newValue);
-                tf_searchProperty1.set(newValue);
-                String sql1 = "select * from register where  id in in (select distinct reg_id from projects) and id like '%" + tf_searchProperty1.get() + "%' and real_name like '%" + tf_searchProperty2.get() + "%'";
-
-                ResultSet res1 = st1.executeQuery(sql1);
-                while (res1.next()) {
-                    String name = res1.getString("real_name");
-                    String age = res1.getString("age");
-                    String sex = res1.getString("gender");
-                    String id = res1.getString("id");
-                    Register p = new Register(id, name, age, sex);
-                    list1.add(p);
-                }
-                st1.close();
-                con1.close();
+                tf_searchProperty2.set(newValue);
+                this.search();
             } catch (Exception e) {
                 throw new RuntimeException(e);
-            }
-
-
-            if (list1 != null) {
-                tv_patients.getItems().clear();
-                tv_patients.getItems().addAll(list1);
             }
         });
 
@@ -210,6 +162,37 @@ public class ApplyController {
             };
         });
     }
+
+    public void search() throws Exception {
+        List<Register> list1 = new ArrayList<>();
+        Class.forName(GlobalData.getClassName());
+        Connection con1 = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
+        Statement st1 = con1.createStatement();
+
+        String sql1 = "select * from register where  id in (select distinct reg_id from projects where jiancha_state = '未检查') and id like '%" + tf_searchProperty1.get() + "%' and real_name like '%" + tf_searchProperty2.get() + "%'";
+
+        ResultSet res1 = st1.executeQuery(sql1);
+        while (res1.next()) {
+            String name = res1.getString("real_name");
+            String age = res1.getString("age");
+            String sex = res1.getString("gender");
+            String id = res1.getString("id");
+            Register p = new Register(id, name, age, sex);
+            list1.add(p);
+        }
+        st1.close();
+        con1.close();
+
+        if (list1 != null) {
+            tv_patients.getItems().clear();
+            tv_patients.getItems().addAll(list1);
+        }
+    }
+    @FXML
+    public void bt_refresh() throws Exception {
+        this.initialize();
+    }
+
 }
 
 

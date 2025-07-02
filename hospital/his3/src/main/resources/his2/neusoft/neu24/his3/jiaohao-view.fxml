@@ -37,6 +37,6 @@
             </columns>
         </TableView>
         <Button layoutX="872.0" layoutY="192.0" mnemonicParsing="false" onAction="#bt_search" prefHeight="27.0" prefWidth="63.0" text="搜索" />
-        <Button layoutX="278.0" layoutY="102.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="刷新" />
+        <Button layoutX="278.0" layoutY="102.0" mnemonicParsing="false" onAction="#bt_refresh" prefHeight="27.0" prefWidth="63.0" text="刷新" />
     </children>
 </AnchorPane>

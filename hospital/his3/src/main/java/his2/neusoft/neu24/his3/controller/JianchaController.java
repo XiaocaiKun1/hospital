@@ -32,7 +32,7 @@ public class JianchaController {
         btn = new MyButton("检查结果录入", "search.png", "enter2-view.fxml"  , home_right );
         home_left.getChildren().add(btn);
 
-        btn = new MyButton("检查管理" , "search.png", "manage-view.fxml"  , home_right );
-        home_left.getChildren().add(btn);
+//        btn = new MyButton("检查管理" , "search.png", "manage-view.fxml"  , home_right );
+//        home_left.getChildren().add(btn);
     }
 }

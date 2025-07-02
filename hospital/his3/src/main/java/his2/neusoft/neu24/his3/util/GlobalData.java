@@ -7,11 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.sql.*;
-import his2.neusoft.neu24.his3.entity.projects;
-
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,13 +20,13 @@ public class GlobalData {
     private static String url = "jdbc:mysql://localhost:3306/hospital";
     private static String user = "root";
     private static String password = "123456";
-    public static String register_id_Selected;
-    public static String register_id_for_drug;
+    public static String register_id_Selected;  //叫号界面被选中的患者id
+    public static String register_id_for_drug; //药品界面被选中的患者id
 
-    public static List<Register> registerList = new ArrayList<>();
-    public static List<Project> projectList = new ArrayList<>();
-    public static List<Register> register_projects_List = new ArrayList<>();
-    public static Register register_SelectedOnProject;
+    public static List<Register> registerList = new ArrayList<>();  //初始化当前的挂号列表
+    public static List<Project> projectList = new ArrayList<>();  //初始化当前被选中患者的项目列表
+    public static List<Register> register_projects_List = new ArrayList<>(); //初始化当前有检查项目的患者
+    public static Register register_SelectedOnProject;  //当前选中的挂号
 
     public static void switchScene(String sceneName, float width, float height, String title)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(sceneName));
@@ -97,9 +94,9 @@ public class GlobalData {
         con.close();
     }
 
-    public static void initProjectsList() throws Exception {
+    public static void initProjectsList(String state_name, String state) throws Exception {
         projectList.clear();
-        String sql1 = "select project.id, project.name, project.fee  from projects, project where pro_id=project.id and projects.reg_id =" + register_SelectedOnProject.getCase_number();
+        String sql1 = "select project.id, project.name, project.fee  from projects, project where "+ state_name + " = '" + state + "' and pro_id= project.id and projects.reg_id = " + register_SelectedOnProject.getCase_number();
         Class.forName(GlobalData.getClassName());
         Connection con = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
         Statement st = con.createStatement();

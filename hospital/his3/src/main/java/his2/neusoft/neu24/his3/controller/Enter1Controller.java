@@ -12,15 +12,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-
-import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 public class Enter1Controller {
@@ -61,7 +57,7 @@ public class Enter1Controller {
     String project_id;
 
     public void initialize() throws Exception {
-        GlobalData.initProjectsList();
+        GlobalData.initProjectsList("jiancha_state", "未检查");
         Label1.setText("姓名");
         Label2.setText("病历号");
         Label3.setText("年龄");
@@ -167,6 +163,10 @@ public class Enter1Controller {
         st.executeUpdate(sql);
         st.close();
         con.close();
+        Ap_2.getChildren().clear();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("enter2-view.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        Ap_2.getChildren().add(anchorPane);
     }
     @FXML
     public void tv_PatientsKeyRealeased(KeyEvent event)
