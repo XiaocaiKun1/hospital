@@ -1,4 +1,5 @@
 module com.neusoft.neu24.his3 {
+    requires java.net.http;
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
