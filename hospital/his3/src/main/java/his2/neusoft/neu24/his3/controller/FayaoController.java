@@ -16,6 +16,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -358,4 +360,10 @@ public class FayaoController {
 
 
     }
+
+    @FXML
+    public void bt_back() throws IOException {
+        GlobalData.switchScene("main-view.fxml", 1280, 768, "登录");
+    }
+
 }

@@ -37,6 +37,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
+                  <Button layoutX="897.0" layoutY="73.0" mnemonicParsing="false" onAction="#bt_back" prefHeight="33.0" prefWidth="68.0" text="返回" />
                     </children>
                 </AnchorPane>
                 <AnchorPane prefHeight="628.0" prefWidth="1080.0">
