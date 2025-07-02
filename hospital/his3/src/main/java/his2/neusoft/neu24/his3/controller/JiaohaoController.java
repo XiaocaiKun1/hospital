@@ -61,13 +61,15 @@ public class JiaohaoController {
         Connection con = DriverManager.getConnection(GlobalData.getUrl(), GlobalData.getUser(), GlobalData.getPassword());
         Statement st = con.createStatement();
 
-        String sql = "select id, register.real_name from register where re_condition = '未处理'";
+        String sql = "select id, register.real_name, gender, age from register where re_condition = '未处理'";
         ResultSet res = st.executeQuery(sql);
         List<Register> list = new ArrayList<>();
         while (res.next()) {
             String id = res.getString("id");
             String name = res.getString("real_name");
-            Register register = new Register(id, name);
+            String sex = res.getString("gender");
+            Long age = res.getLong("age");
+            Register register = new Register(id, name, sex, age);
             list.add(register);
         }
         st.close();
@@ -122,12 +124,14 @@ public class JiaohaoController {
 
                 private void handleButtonClick(Button button) throws Exception {
                     Register patient1=getTableView().getItems().get(getIndex());
+                    GlobalData.register_id_Selected = patient1.getCase_number();
+                    GlobalData.register_Selected = patient1;
                     if(patient1.getCase_number()!=null){
                         jiaohao.getChildren().clear();
                         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("zhenduan-view.fxml"));
                         AnchorPane anchorPane = fxmlLoader.load();
                         jiaohao.getChildren().add(anchorPane);
-                        GlobalData.register_id_Selected = patient1.getCase_number();
+
                     }
                 }
 

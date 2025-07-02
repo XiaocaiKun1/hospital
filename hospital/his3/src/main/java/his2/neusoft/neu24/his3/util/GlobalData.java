@@ -22,6 +22,7 @@ public class GlobalData {
     private static String password = "123456";
     public static String register_id_Selected;  //叫号界面被选中的患者id
     public static String register_id_for_drug; //药品界面被选中的患者id
+    public static Register register_Selected; //叫号界面被选中的患者
 
     public static List<Register> registerList = new ArrayList<>();  //初始化当前的挂号列表
     public static List<Project> projectList = new ArrayList<>();  //初始化当前被选中患者的项目列表

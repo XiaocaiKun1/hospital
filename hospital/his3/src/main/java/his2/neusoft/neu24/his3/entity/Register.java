@@ -61,6 +61,13 @@ public class Register {
         this.home_address = home_address;
     }
 
+    public Register(String case_number, String name, String sex, Long age) {
+        this.case_number = case_number;
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+    }
+
     public Register() {
     }
 

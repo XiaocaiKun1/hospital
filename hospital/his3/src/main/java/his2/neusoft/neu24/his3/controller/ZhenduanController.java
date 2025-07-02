@@ -37,6 +37,15 @@ public class ZhenduanController {
     private TableColumn<Project, String> nameDCloumn;
     @FXML
     private TableColumn<Project, String> feeDCloumn;
+    @FXML
+    Label Label1;
+    @FXML
+    Label Label2;
+    @FXML
+    Label Label3;
+    @FXML
+    Label Label4;
+
 
 
     public void initialize() {
@@ -44,6 +53,10 @@ public class ZhenduanController {
         nameDCloumn.setCellValueFactory(new PropertyValueFactory("name"));
         feeDCloumn.setCellValueFactory(new PropertyValueFactory("fee"));
 
+        Label1.setText("姓名: " + GlobalData.register_Selected.getName());
+        Label2.setText("病历号: " + GlobalData.register_Selected.getCase_number());
+        Label3.setText("年龄: " + GlobalData.register_Selected.getAge());
+        Label4.setText("性别: " + GlobalData.register_Selected.getSex());
 
         zhenduan_TableView_Mbt1.setCellFactory(column -> {
             return new TableCell<Project, String>() {
