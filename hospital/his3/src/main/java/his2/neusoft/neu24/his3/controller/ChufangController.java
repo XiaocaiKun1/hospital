@@ -12,8 +12,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import his2.neusoft.neu24.his3.entity.MedicalRecord;
+import his2.neusoft.neu24.his3.service.ChatModelService;
+import java.util.Arrays;
+import javafx.application.Platform;
+import java.sql.ResultSet;
 import java.io.IOException;
+import java.util.List;
 
 public class ChufangController {
     @FXML
@@ -33,13 +38,15 @@ public class ChufangController {
     @FXML
     private AnchorPane Ap_6;
 
+    String register_id;
+
     // 获取tableview
     public TableView<Medicine> getTv_medicines() {
         return tv_medicines;
     }
     @FXML
     void bt_save() throws Exception {
-        String register_id = GlobalData.register_id_Selected;
+        register_id = GlobalData.register_id_Selected;
         tv_medicines.getItems().forEach(medicine -> {
             if (medicine.getID() != null)
             {
@@ -58,7 +65,7 @@ public class ChufangController {
         Stage popupStage = new Stage();
         popupStage.setTitle("医院系统");
         AnchorPane popupLayout = new AnchorPane();
-        Label label = new javafx.scene.control.Label("操作成功！");
+        Label label = new Label("操作成功！");
         label.setLayoutX(110);
         label.setLayoutY(60);
         label.setStyle("-fx-font-size: 15px;");
@@ -75,7 +82,7 @@ public class ChufangController {
         Scene popupScene = new Scene(popupLayout, 300, 200);
         popupStage.setScene(popupScene);
         // 确保当新窗口关闭时不会阻止主应用关闭（根据需要调整）
-        popupStage.initModality(javafx.stage.Modality.NONE);
+        popupStage.initModality(Modality.NONE);
         // 显示新窗口
         popupStage.show();
     }
@@ -146,4 +153,89 @@ public class ChufangController {
         stage.setTitle("医院系统 | 药房");
         stage.show();
     }
+    @FXML
+    private void tuijian() {
+        register_id = GlobalData.register_id_Selected;
+        if (register_id == null || register_id.isEmpty()) {
+            showAlert("错误", "无法获取患者ID");
+            return;
+        }
+
+        // 查询数据库获取病历信息
+        MedicalRecord medicalRecord = getMedicalRecordFromDatabase(register_id);
+
+        if (medicalRecord != null) {
+            // 创建并初始化ChatModelService
+            ChatModelService chatModelService = new ChatModelService();
+            String message = "患者诉求：" + medicalRecord.getReadme() +
+                            "，患者当前状况:" + medicalRecord.getPresent()+
+                    "，请为我推荐具体的药品，回答时只简单回答药品名称，同时回答时不要使用文本无法显示的特殊符号或表情，尽量简洁具体，用一句话概括";
+            System.out.println(message);
+            chatModelService.sendMessage(List.of("用户: " + message), this::handleModelResponse);
+//            String response = chatModelService.sendMessageSync(List.of("用户: " + message));
+//            handleModelResponse(response);
+//            System.out.println("推荐:" + response);
+        } else {
+            showAlert("错误", "未找到该患者的病历信息");
+        }
+    }
+
+    // 处理大模型响应
+    private void handleModelResponse(String modelResponse) {
+        if (modelResponse != null && !modelResponse.isEmpty()) {
+            // 显示标准的 Alert 弹窗
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("智能推荐");
+                alert.setHeaderText(null); // 不显示头部信息
+                alert.setContentText(modelResponse);
+                
+                // 设置弹窗大小
+                alert.getDialogPane().setMinWidth(400);  // 扩大最小宽度
+                alert.getDialogPane().setMinHeight(200); // 增加最小高度
+                
+                // 设置字体大小
+                alert.getDialogPane().setStyle("-fx-font-size: 16px;"); 
+
+                // 设置对话框的图标（可选）
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                // stage.getIcons().add(new Image("file:resources/icon-info.png")); // 如果有图标文件可以取消注释
+
+                alert.showAndWait();
+            });
+        }
+    }
+
+    // 数据库查询实现
+    private MedicalRecord getMedicalRecordFromDatabase(String patientId) {
+        // 这里应该实现从数据库查询的逻辑
+        // 仅为示例返回模拟数据
+        try {
+            String sql = "SELECT readme, present FROM medical_record WHERE register_id = '" + patientId + "'";
+            ResultSet rs = SqlConnecting.executeQuery(sql);
+
+            if (rs.next()) {
+                String readme = rs.getString("readme");
+                String present = rs.getString("present");
+                return new MedicalRecord(readme, present);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // 弹窗辅助方法
+    private void showAlert(String title, String content) {
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle(title);
+            alert.setHeaderText(null);
+            alert.setContentText(content);
+            alert.showAndWait();
+        });
+    }
+
+
+
 }

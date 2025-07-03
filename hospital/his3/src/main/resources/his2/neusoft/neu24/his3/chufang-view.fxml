@@ -35,7 +35,8 @@
         </TableView>
         <Button layoutX="205.0" layoutY="542.0" mnemonicParsing="false" onAction="#bt_save" prefHeight="40.0" prefWidth="98.0" text="开立处方" />
         <Button layoutX="364.0" layoutY="542.0" mnemonicParsing="false" onMouseClicked="#bt_p" prefHeight="40.0" prefWidth="98.0" text="重置处方" />
-        <Button layoutX="927.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#tvMouseClicked" prefHeight="40.0" prefWidth="76.0" text="添加" />
+        <Button layoutX="927.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#tvMouseClicked" prefHeight="40.0" prefWidth="76.0" text="添加药品" />
+        <Button layoutX="927.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#tuijian" prefHeight="40.0" prefWidth="76.0" text="推荐药品" />
     </children>
 
 </AnchorPane>
