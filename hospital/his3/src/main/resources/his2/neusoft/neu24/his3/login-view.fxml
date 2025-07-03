@@ -1,42 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.PasswordField?>
 
-<AnchorPane prefHeight="307.0" prefWidth="583.0"
-            xmlns="http://javafx.com/javafx/17.0.2"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="his2.neusoft.neu24.his3.controller.LoginController">
+<AnchorPane prefHeight="560.0" prefWidth="781.0" style="-fx-background-color: #61b9f8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="his2.neusoft.neu24.his3.controller.LoginController">
    <children>
-      <Accordion />
-      <ImageView fitHeight="483.0" fitWidth="756.0" layoutX="-32.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="519.0" fitWidth="869.0" layoutX="-10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../images/login.png" />
+            <Image url="@../../../../images/h2.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
       </ImageView>
-      <Label layoutX="66.0" layoutY="99.0" prefHeight="26.0" prefWidth="51.0" text="用户名" AnchorPane.leftAnchor="66.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="66.0" layoutY="142.0" prefHeight="26.0" prefWidth="51.0" text=" 密 码">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tx_userName" layoutX="117.0" layoutY="100.0" />
-      <PasswordField fx:id="password" layoutX="117.0" layoutY="143.0" />
-      <Button layoutX="160.0" layoutY="184.0" mnemonicParsing="false" onAction="#bt_login" text="登录">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
+      <AnchorPane layoutX="464.0" layoutY="140.0" prefHeight="253.0" prefWidth="282.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <PasswordField fx:id="password" layoutX="40.0" layoutY="134.0" prefHeight="30.0" prefWidth="201.0" promptText="请输入密码" style="-fx-border-color: #3dbdc8;" />
+            <TextField fx:id="tx_userName" layoutX="40.0" layoutY="86.0" prefColumnCount="0" prefHeight="30.0" prefWidth="201.0" promptText="请输入账号" style="-fx-border-color: #3dbdc8;" />
+            <Button layoutX="40.0" layoutY="187.0" mnemonicParsing="false" onAction="#bt_login" prefHeight="30.0" prefWidth="201.0" style="-fx-background-color: #5fc6f6; -fx-background-radius: 15;" text="登录">
+               <textFill>
+                  <LinearGradient endX="0.8264983986454432" endY="1.0" startX="0.8233439207829134" startY="0.9716088448413163">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.37254902720451355" green="0.7764706015586853" blue="0.9647058844566345" opacity="0.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <TextField layoutX="40.0" layoutY="27.0" prefHeight="33.0" prefWidth="193.0" style="-fx-background-color: white;" text="医脉智联门诊管理平台">
+               <font>
+                  <Font name="HONOR Sans CN" size="17.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-1.0" prefHeight="65.0" prefWidth="837.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/logo1.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="72.0" layoutY="11.0" prefHeight="44.0" prefWidth="262.0" style="-fx-background-color: white;" text="Intelligence Medical Nexus">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="587.0" layoutY="21.0" prefHeight="23.0" prefWidth="201.0" style="-fx-background-color: white;" text="医疗管理 | 远程门诊 | 医技管理" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="467.0" prefHeight="103.0" prefWidth="837.0" style="-fx-background-color: white;">
+         <children>
+            <TextField layoutX="338.0" layoutY="40.0" style="-fx-background-color: white;" text="河南医脉智联科技有限公司" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
