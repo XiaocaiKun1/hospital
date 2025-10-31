@@ -117,12 +117,12 @@ public static ResultSet executeQuery(String sql);
 ```
 │── src/
 │   ├── controller/       # 控制层逻辑
-│   ├── dao/              # 数据访问层
 │   ├── entity/           # 实体类
+│   ├── Mybutton/         # 自定义按钮
+│   ├── service/          # AI 接口
 │   ├── util/             # 工具类（GlobalData等）
-│   ├── view/             # FXML界面文件
 │── resources/
-│   ├── css/
+│   ├── xml/
 │   ├── images/
 │── pom.xml               # Maven 配置文件
 │── README.md
